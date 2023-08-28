@@ -1,0 +1,42 @@
+    1  password
+    2  passwd
+    3  wget www.github.com
+    4  ls*.txt
+    5  touch aa.txt
+    6  touch bb.txt
+    7  mkdir 0828
+    8  cd 0828
+    9  touch aa.txt
+   10  touch bb.txt
+   11  touch cc.jpeg
+   12  ls
+   13  ls*.txt
+   14  ls *.txt
+   15  ls ?.txt
+   16  touch a.txt
+   17  ls ?.txt
+   18  ls ??.txt
+   19  ls -l *.jpeg
+   20  ls -l*.txt
+   21  ls -l *.txt
+   22  touch dd.txt
+   23  touch eee.txt
+   24  ls ???.txt
+   25  ls
+   26  man tar
+   27  rmv bb.txt 
+   28  rmv aa.txt 
+   29  man rmv
+   30  head cmds.log
+   31  head 0828
+   32  cd cmds.log
+   33  less
+   34  less --help
+   35  nano cmds.log
+   36  less cmds.log
+   37  exit
+   38  mkdir cs131
+   39  cd cs131
+   40  ls
+   41  history
+   42  history > cmds.log
