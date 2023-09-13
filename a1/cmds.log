@@ -1,0 +1,33 @@
+
+  588  mkdir a1
+  589  ls
+  590  mv a1 cs131
+  592  vim a1.txt > a1
+  593  echo $HOME
+  594  cat /etc/passwd
+  595  cat /etc/group
+  596  mkdir temp
+  597  chmod 666 temp
+  598  ls
+  599  ls -l
+  600  touch a.txt
+  602  a.txt > temp
+  603  mv a.txt temp
+  604  cd temp
+  605  vim a1.txt
+  606  mkdir temp2
+  609  mkdir temp3
+  616  mv temp2 temp3
+  620  cp temp2 temp3
+  644  cp -r temp2 temp3
+  653  ls /proc
+  655  cat /proc/meminfo
+  658  cat /proc/cpuinfo
+  663  head /proc/meminfo
+  665  head /proc/cpuinfo
+  666  tail /proc/cpuinfo
+  667  cat /proc/cpuinfo
+  669  cat /etc/os-release
+  671  ls -l /etc/os-release
+  672  vim a1.txt
+  673  history > cmds.log

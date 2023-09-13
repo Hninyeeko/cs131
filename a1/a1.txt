@@ -1,0 +1,63 @@
+1) Make a directory a1 under your home directory.
+/mnt/scratch/apple23fa/cs131/a1
+
+2) What is your home directory path? How did you find out?
+/mnt/scratch/apple23fa
+I used the command echo $HOME to find out
+
+3) What is your UID? To what group(s) do you belong? HOw did you find out?
+apple23fa:x:1018:1018::/mnt/scratch/apple23fa:/bin/bash
+apple23fa:x:1018:
+My UID is 1018 in the third field and my group ID is 1018 in the fourth field.
+I belong to group apple23fa.  
+I used the command cat /etc/passwd and cat /etc/group
+
+4) Create a new directory "temp". Remove execute permisision for yourself. From this temp directory, are you allowed to cd in that directoy? Can you "ls -l" it? Can you create files under it?
+
+/mnt/scratch/apple23fa/cs131/a1/temp
+
+I removed execute permission for myself using this command: chmod 666 temp
+
+I am not allowed to cd in that directory.
+bash: cd: temp: Permission denied
+
+I can ls -l it. 
+total 8
+-rw-rw-r-- 1 apple23fa apple23fa 1641 Sep 13 02:14 a1.txt
+drw-rw-rw- 2 apple23fa apple23fa 4096 Sep 13 01:54 temp
+
+I cannot create files under it.
+mv: cannot stat 'temp/a.txt': Permission denied 
+
+5) Create a new directory "temp2". Are you allowed to "mv" the directory to "temp3"? Are you allowed to "cp" a directoy? If you want to cp an entire directory, how would you do it?
+I am allowed to mv temp2 to temp3 but I am not allowed to cp temp 2 to temp3.
+cp: -r not specified; omitting directory 'temp2'
+So I used cp -r temp2 temp3 to cp the whole directory.
+
+6) Using only "ls" (and maybe grep) can you find out which file under directory/proc/contains information about memory (mem) on your server? which file contains informations about the cpu's on your server?
+I can use the command ls /proc to find out the files meminfo anf cpuinfo.
+
+7) Use head to check the memory information file you found above. How much total memory is on your server?
+MemTotal:       73080512 kB
+
+8) Then use head, tail, cat to check the cpu information file you found above. How many processors are on your server? What is the processor architecture name? What is the processor speed in GHz?
+There are 256 processors. The processor architecture name is POWER8. the processor speed is 3.425 GHz.
+
+processor	: 0
+cpu		: POWER8 (architected), altivec supported
+clock		: 3425.000000MHz
+revision	: 2.1 (pvr 004b 0201)
+
+processor	: 255
+cpu		: POWER8 (architected), altivec supported
+clock		: 3425.000000MHz
+revision	: 2.1 (pvr 004b 0201)
+
+9)Identify the operating system version. Which file under /etc/ contains this information?
+VERSION_ID="8.6"
+It can be found under /etc/os-release
+
+10) What is the permission (given to all users) for the file containing the OS version information?
+lrwxrwxrwx. 1 root root 22 Apr  6  2022 /etc/os-release -> ..//usr/lib/os-release
+All users do not have permission to read, write or execute except the root owner.
+
