@@ -1,0 +1,11 @@
+ Top 3 pick up location ID in Jan 2019
+
+ 312392 161.0
+ 323008 236.0
+ 332473 237.0
+
+Top 3 pick up location ID in Feb 2019
+
+ 286773 161.0
+ 280640 236.0
+ 294584 237.0

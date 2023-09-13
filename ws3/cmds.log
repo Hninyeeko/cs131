@@ -1,0 +1,14 @@
+  394  ls
+  395  ls taxidata
+  396  cut -d ',' -f 8 taxidata/2019-01.csv > jan.txt
+  400  sort -n jan.txt > sortedjan.txt
+  402  uniq -c sortedjan.txt > ws3.txt
+  404  vim ws3.txt
+  405  cat ws3.txt
+  406  cut -d ',' -f 8 taxidata/2019-02.csv > feb.txt
+  408  sort -n feb.txt > sortedfeb.txt
+  409  ls
+  410  uniq -c sortedfeb.txt >> ws3.txt
+  411  vim ws3.txt
+  412  cat ws3.txt
+  413  history > cmds.log
