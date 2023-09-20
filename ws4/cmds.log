@@ -1,0 +1,37 @@
+Task 1
+  878  vim .bashrc
+  879  echo $SHELL
+  880  vim .bash_profile
+  881  l
+  882  w
+  896  script ws4.txt
+  897  cat ws4.txt
+  898  vim ws4.txt
+
+Task 2
+  901  cd cs131
+  903  mkdir ws4
+  905  cd ws4
+  906  mkdir FARE
+  920  cd taxidata
+  921  ls
+  922  head 2019-06.csv
+  925  cd taxidata
+  926  ls
+  932  grep -E "^[^,]*,[^,]*,[^,]*,[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*79.0,125.0" 2019-06.csv > pair1.txt
+  936  cut -d ',' -f 11 pair1.txt > 79.0-125.0.txt
+  941  cd ..
+  964  mv taxidata/79.0-125.0.txt cs131/ws4/FARE
+  971  cd taxidata
+  973  grep -E "^[^,]*,[^,]*,[^,]*,[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*[^,],*113.0,148.0" 2019-06.csv > pair2.txt
+  975  cut -d ',' -f 11 pair2.txt > 113.0-148.0.txt
+  977  cd ..
+  978  mv taxidata/113.0-148.0.txt cs131/ws4/FARE
+ 1008  sum=$(awk '{print $1}' 79.0-125.0.txt | paste -sd+ | bc); echo "$sum / $(cat 79.0-125.0.txt | wc -l)" | bc -l > result1.txt
+ 1011  cat result1.txt
+ 1015  sum=$(awk '{print $1}' 113.0-148.0.txt | paste -sd+ | bc); echo "$sum / $(cat 113.0-148.0.txt | wc -l)" | bc -l > result2.txt
+ 1017  cat result2.txt
+ 1029  cat result1.txt >> ws4.txt
+ 1031  cat result2.txt >> ws4.txt
+ 1033  vim ws4.txt
+ 1034  history > cmds.log

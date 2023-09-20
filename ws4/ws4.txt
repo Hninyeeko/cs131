@@ -1,0 +1,41 @@
+TASK 1
+
+Script started on 2023-09-19 21:17:40-04:00
+
+bash-4.4$ l
+
+total 1874756
+-rw-rw-r-- 1 apple23fa apple23fa     235711 Aug 23 18:57 index.html
+-rw-rw-r-- 1 apple23fa apple23fa     235699 Aug 28 16:26 index.html.1
+-rw-rw-r-- 1 apple23fa apple23fa          0 Aug 28 17:01 aa.txt
+-rw-rw-r-- 1 apple23fa apple23fa          0 Aug 28 17:01 bb.txt
+drwxrwxr-x 2 apple23fa apple23fa       4096 Aug 28 17:05 0828
+-rwxr-xr-x 1 apple23fa apple23fa 1714477100 Sep  3 01:13 taxidata.tar.gz
+-rw-rw-r-- 1 apple23fa apple23fa   33742392 Sep  3 02:31 stdout.txt
+drwxrwxr-x 2 apple23fa apple23fa       4096 Sep  3 03:28 ws2
+drwxr-xr-x 2 apple23fa apple23fa       4096 Sep 12 15:12 taxidata
+-rw-rw-r-- 1 apple23fa apple23fa   44666950 Sep 12 15:14 jan.txt
+-rw-rw-r-- 1 apple23fa apple23fa   44666950 Sep 12 15:15 sortedjan.txt
+-rw-rw-r-- 1 apple23fa apple23fa   40844038 Sep 12 15:33 feb.txt
+-rw-rw-r-- 1 apple23fa apple23fa   40844038 Sep 12 15:34 sortedfeb.txt
+-rw-rw-r-- 1 apple23fa apple23fa          0 Sep 12 20:43 test
+drwxrwxr-x 7 apple23fa apple23fa       4096 Sep 13 17:01 cs131
+-rw-rw-r-- 1 apple23fa apple23fa          0 Sep 19 21:17 ws4.txt
+
+bash-4.4$ w
+
+     17     146    1072
+
+bash-4.4$ exit
+
+Script done on 2023-09-19 21:17:52-04:00
+
+TASK 2
+
+Average Fare from 79.0-125.0
+
+9.14383561643835616438
+
+Average Fare from 113.0-148.0
+
+8.38420019627085377821
