@@ -1,0 +1,27 @@
+  974  grep -E "^[^,]*,[^,]2019-05-11" 2019-05.csv > may11.txt
+  978  cut -d ',' -f 17 may11.txt > total.txt
+  985  echo "$(cat total.txt | paste -s -d+ | bc)/$(wc -l < total.txt)" | bc -l > a2.txt
+  986  sort -n -r total.txt | head -n1 >> a2.txt
+  994  grep -E "^([^,]*,){3}[3-9]" 2019-05.csv > 3ormore.txt
+ 1001  cut -d ',' -f 9 3ormore.txt | sort -n | uniq -c > sorted3ormore.txt
+ 1002  sort -n -r sorted3ormore.txt | head -n10 > top10.txt
+ 1013  cat top10.txt >> a2.txt
+ 1015  grep -E "^[^,]*,[^,]2019-05-20" 2019-05.csv > may20.txt
+ 1016  cut -d ',' -f 8 may20.txt | sort -n | uniq -c | sort -n -r | head -n10 > poppu.txt
+ 1019  grep -E "^([^,]*,){7}237.0" may20.txt > pu237.txt 
+ 1022  cut -d ',' -f 9 pu237.txt | sort -n | uniq -c | sort -n -r | head -n1 >> a2.txt
+ 1024  cut -d ',' -f 8 2019-01.csv | sort -n | uniq -c | sort -n -r | head -n1 > wholeyear.txt
+ 1026  cut -d ',' -f 8 2019-02.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1027  cut -d ',' -f 8 2019-03.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1028  cut -d ',' -f 8 2019-04.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1029  cut -d ',' -f 8 2019-05.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1030  cut -d ',' -f 8 2019-06.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1031  cut -d ',' -f 8 2019-07.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1032  cut -d ',' -f 8 2019-08.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1033  cut -d ',' -f 8 2019-09.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1034  cut -d ',' -f 8 2019-10.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1035  cut -d ',' -f 8 2019-11.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1036  cut -d ',' -f 8 2019-12.csv | sort -n | uniq -c | sort -n -r | head -n1 >> wholeyear.txt
+ 1038  sort -n -r wholeyear.txt | head -n1 >> a2.txt
+ 1039  vim a2.txt
+ 1053  history > cmds.log
