@@ -1,0 +1,17 @@
+ Task 1
+ 1020  head 2019-11.csv
+ 1027  sed -n '/^2.0/p' 2019-11.csv > vendor2.csv
+ 1029  wc vendor2.csv > ws6.txt
+
+Task 2
+ 1041  sed 's/[:"-]//g' 2019-11.csv > no-separators.csv
+ 1042  head no-separators.csv
+ 1043  head -10 no-separators.csv >> ws6.txt
+
+Task 3
+ 1045  sed 's/\.[0-9]*//g' no-separators.csv > no-fractions.csv
+ 1047  head -10 no-fractions.csv >> ws6.txt
+
+
+Task 4
+ 1063  history > cmds.log
