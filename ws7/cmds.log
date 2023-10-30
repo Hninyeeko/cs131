@@ -1,0 +1,5 @@
+  998  head 2019-12.csv
+  999  vim script.sh
+ 1000  awk -f script.sh 2019-12.csv
+ 1002  awk -f script.sh 2019-12.csv
+ 1014  history > cmds.log
