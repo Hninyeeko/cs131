@@ -1,0 +1,110 @@
+Download dataset from kaggle
+  706  pip install kaggle
+  709  mv Desktop/kaggle.json .kaggle/kaggle.json
+  710  kaggle datasets download -d shivamb/company-acquisitions-7-top-companies
+  711  'chmod 600 /Users/hninyeeko/.kaggle/kaggle.json'
+  722  unzip company_acquisitions.data
+  726  head acquisitions_update_2021.csv
+  
+Create separate data files for each company
+  796  grep -E "^[^,]*,Twitter" acquisitions_update_2021.csv > twitter.dat
+  797  head twitter.dat
+  798  grep -E "^[^,]*,Amazon" acquisitions_update_2021.csv > amazon.dat
+  799  head amazon.dat
+  800  grep -E "^[^,]*,Hp" acquisitions_update_2021.csv > hp.dat
+  801  head hp.dat
+  802  grep -E "^[^,]*,Google" acquisitions_update_2021.csv > google.dat
+  803  head google.dat
+  804  grep -E "^[^,]*,Microsoft" acquisitions_update_2021.csv > microsoft.dat
+  805  head microsoft.dat
+  806  grep -E "^[^,]*,Blackberry" acquisitions_update_2021.csv > blackberry.dat
+  807  head blackberry.dat
+  808  grep -E "^[^,]*,Ebay" acquisitions_update_2021.csv > ebay.dat
+  809  head ebay.dat
+  810  grep -E "^[^,]*,Ibm" acquisitions_update_2021.csv > ibm.dat
+  811  head ibm.dat
+  812  grep -E "^[^,]*,Adobe" acquisitions_update_2021.csv > adobe.dat
+  813  head adobe.dat
+  814  grep -E "^[^,]*,Facebook" acquisitions_update_2021.csv > fb.dat
+  815  head fb.dat
+  816  grep -E "^[^,]*,Redhat" acquisitions_update_2021.csv > redhat.dat
+  817  head redhat.dat
+  818  grep -E "^[^,]*,Disney" acquisitions_update_2021.csv > disney.dat
+  819  head disney.dat
+  820  grep -E "^[^,]*,Citrix" acquisitions_update_2021.csv > citrix.dat
+  822  head citrix.dat
+  827  grep -E "^[^,]*,Apple" acquisitions_update_2021.csv > apple.dat
+
+Count and store total acquisitions made by each company
+  830  wc -l fb.dat > acq_count.dat
+  832  wc -l apple.dat >> acq_count.dat
+  833  wc -l hp.dat >> acq_count.dat
+  834  wc -l redhat.dat >> acq_count.dat
+  835  wc -l adobe.dat >> acq_count.dat
+  836  wc -l blackberry.dat >> acq_count.dat
+  837  wc -l disney.dat >> acq_count.dat
+  838  wc -l ibm.dat >> acq_count.dat
+  839  wc -l twitter.dat >> acq_count.dat
+  840  wc -l amazon.dat >> acq_count.dat
+  841  wc -l citrix.dat >> acq_count.dat
+  842  wc -l ebay.dat >> acq_count.dat
+  843  wc -l google.dat >> acq_count.dat
+  844  wc -l microsoft.dat >> acq_count.dat
+
+Clean up and format data file in vim and make gnuplot file (histogram)
+  846  vim acq_count.dat
+  848  vim hist.plt
+  850  gnuplot hist.plt
+  885  open histogram.png
+  
+Count yearly acquisitions made by each company
+  887  cut -d ',' -f3 adobe.dat | sort -n | uniq -c > adobe_yearly.dat
+  889  cut -d ',' -f3 fb.dat | sort -n | uniq -c > fb_yearly.dat
+  890  cut -d ',' -f3 apple.dat | sort -n | uniq -c > apple_yearly.dat
+  893  cut -d ',' -f3 hp.dat | sort -n | uniq -c > hp_yearly.dat
+  894  cut -d ',' -f3 redhat.dat | sort -n | uniq -c > redhat_yearly.dat
+  895  cut -d ',' -f3 blackberry.dat | sort -n | uniq -c > blackberry_yearly.dat
+  896  cut -d ',' -f3 disney.dat | sort -n | uniq -c > disney_yearly.dat
+  897  cut -d ',' -f3 ibm.dat | sort -n | uniq -c > ibm_yearly.dat
+  900  cut -d ',' -f3 twitter.dat | sort -n | uniq -c > twitter_yearly.dat
+  903  cut -d ',' -f3 amazon.dat | sort -n | uniq -c > amazon_yearly.dat
+  904  cut -d ',' -f3 citrix.dat | sort -n | uniq -c > citrix_yearly.dat
+  905  cut -d ',' -f3 ebay.dat | sort -n | uniq -c > ebay_yearly.dat
+  906  cut -d ',' -f3 google.dat | sort -n | uniq -c > google_yearly.dat
+  907  cut -d ',' -f3 microsoft.dat | sort -n | uniq -c > microsoft_yearly.dat
+
+Clean up dataset to make 2 gnuplot files (line graphs)
+  915  vim fb_yearly.dat
+  916  vim apple_yearly.dat
+  917  vim hp_yearly.dat
+  918  vim redhat_yearly.dat
+  919  vim adobe_yearly.dat
+  920  vim blackberry_yearly.dat
+  921  vim disney_yearly.dat
+  922  vim ibm_yearly.dat
+  923  vim twitter_yearly.dat
+  924  vim amazon_yearly.dat
+  925  vim citrix_yearly.dat
+  926  vim ebay_yearly.dat 
+  927  vim google_yearly.dat
+  928  vim microsoft_yearly.dat
+  936  vim line.plt
+  950  vim line2.plt
+  952  gnuplot line.plt
+  953  gnuplot line2.plt
+  955  open line_graph1.png
+  956  open line_graph2.png
+
+Count Top 10 Business Use Cases from Year 2000-2021
+  967  grep -E "^([^,]*,){2}20" acquisitions_update_2021.csv > 2000-2021.csv
+  975  cut -d ',' -f6 2000-2021.csv | sort | uniq -c | sort -nr | head -12 | tail -10 > usecases.dat
+
+Clean up dataset to make gnuplot (histogram2)
+  977  vim usecases.dat
+  980  vim hist2.plt
+  981  gnuplot hist2.plt
+  983  open histogram2.png
+
+Save history in cmds.log
+  990  history > cmds.log
+  991  vim cmds.log
